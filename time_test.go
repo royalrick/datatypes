@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"gorm.io/datatypes"
+	"github.com/royalrick/datatypes"
 	. "gorm.io/gorm/utils/tests"
 )
 

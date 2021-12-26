@@ -5,7 +5,7 @@
 sqlite, mysql, postgres supported
 
 ```go
-import "gorm.io/datatypes"
+import "github.com/royalrick/datatypes"
 
 type UserWithJSON struct {
 	gorm.Model
@@ -51,7 +51,7 @@ NOTE: SQlite need to build with `json1` tag, e.g: `go build --tags json1`, refer
 ## Date
 
 ```go
-import "gorm.io/datatypes"
+import "github.com/royalrick/datatypes"
 
 type UserWithDate struct {
 	gorm.Model
@@ -74,7 +74,7 @@ MySQL, PostgreSQL, SQLite, SQLServer are supported.
 Time with nanoseconds is supported for some databases which support for time with fractional second scale.
 
 ```go
-import "gorm.io/datatypes"
+import "github.com/royalrick/datatypes"
 
 type UserWithTime struct {
     gorm.Model
