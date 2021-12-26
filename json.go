@@ -8,7 +8,6 @@ import (
 	"fmt"
 	"strings"
 
-	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
 	"gorm.io/gorm/schema"
@@ -90,12 +89,12 @@ func (js JSON) GormValue(ctx context.Context, db *gorm.DB) clause.Expr {
 
 	data, _ := js.MarshalJSON()
 
-	switch db.Dialector.Name() {
-	case "mysql":
-		if v, ok := db.Dialector.(*mysql.Dialector); ok && !strings.Contains(v.ServerVersion, "MariaDB") {
-			return gorm.Expr("CAST(? AS JSON)", string(data))
-		}
-	}
+	// switch db.Dialector.Name() {
+	// case "mysql":
+	// 	if v, ok := db.Dialector.(*mysql.Dialector); ok && !strings.Contains(v.ServerVersion, "MariaDB") {
+	// 		return gorm.Expr("CAST(? AS JSON)", string(data))
+	// 	}
+	// }
 
 	return gorm.Expr("?", string(data))
 }
